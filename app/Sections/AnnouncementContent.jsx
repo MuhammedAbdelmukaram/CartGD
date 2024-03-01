@@ -105,7 +105,7 @@ const AnnouncementContent = () => {
         <Card>
           <BlockStack gap="500">
             <Checkbox
-              label="Bold text"
+              label="Bold Announcement Text"
               checked={announcementFontWeight}
               onChange={(newChecked) => {
                 console.log(newChecked); // Log the value
@@ -114,7 +114,7 @@ const AnnouncementContent = () => {
             />
 
             <Checkbox
-              label="Bold text"
+              label="Bold Time Left"
               checked={timeLeftFontWeight}
               onChange={(newChecked) => {
                 console.log(newChecked); // Log the value

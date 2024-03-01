@@ -11,6 +11,7 @@ const initialState = {
   buttonTextColor: '#ffffff',
   buttonTextHoverColor: '#2d2d2d',
   cartTextColor: '#000000',
+  cartType:'drawer'
 };
 
 export const designContentSlice = createSlice({
@@ -42,6 +43,9 @@ export const designContentSlice = createSlice({
     setCartTextColor: (state, action) => {
       state.cartTextColor = action.payload;
     },
+    setCartType: (state, action) => {
+      state.cartType = action.payload;
+    },
   },
 });
 
@@ -53,7 +57,8 @@ export const {
   setButtonColor,
   setButtonTextColor,
   setButtonTextHoverColor,
-  setCartTextColor
+  setCartTextColor,
+  setCartType
 } = designContentSlice.actions;
 
 export default designContentSlice.reducer;

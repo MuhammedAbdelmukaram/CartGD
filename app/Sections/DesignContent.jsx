@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Card, BlockStack, Text, Checkbox, Divider } from '@shopify/polaris';
+import { Card, BlockStack, Text, Checkbox, Divider,ChoiceList } from '@shopify/polaris';
 import ColorPicker from "../components/colorPicker";
 import PlaceholderEnabler from "../components/placeholderEnabler";
 import {
@@ -11,7 +11,7 @@ import {
   setButtonColor,
   setButtonTextColor,
   setButtonTextHoverColor,
-  setCartTextColor
+  setCartTextColor, setCartType
 } from '../redux/designContentSlice';
 import {useDispatch, useSelector} from "react-redux";
 
@@ -33,14 +33,20 @@ const DesignContent = () => {
     buttonColor,
     buttonTextColor,
     buttonTextHoverColor,
-    cartTextColor
+    cartTextColor,
+    cartType
   } = useSelector((state) => state.designContent);
+
+  const handleChange = useCallback((value) => {
+    const cartType = value[0]; // Since ChoiceList for single choice gives an array, take the first value
+    dispatch(setCartType(cartType));
+  }, [dispatch]);
 
 
 
 
   return (
-    <div>
+    <div style={{marginBottom:64}}>
       <div style={{marginBottom:24}}>
 
 
@@ -49,6 +55,17 @@ const DesignContent = () => {
             <Text as="p" variant="headingSm">
               Theme settings
             </Text>
+
+            <ChoiceList
+              titleHidden={true}
+              title="Cart Type"
+              choices={[
+                { label: 'Drawer Cart', value: 'drawer' },
+                { label: 'Page Cart', value: 'page' },
+              ]}
+              selected={[cartType]} // Make sure cartType is correctly coming from Redux state
+              onChange={handleChange}
+            />
 
             <Checkbox
               label="Show strikethrough prices"

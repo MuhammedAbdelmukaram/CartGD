@@ -1,27 +1,28 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-name = "cart-upsell-gd"
 client_id = "54f1ab979a3e2891d2c634f59c1f3296"
-application_url = "https://bring-earrings-philosophy-leaf.trycloudflare.com"
+name = "99 Upsell"
+application_url = "https://suse-delhi-sandwich-knit.trycloudflare.com"
 embedded = true
-
-[access_scopes]
-# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
-
-[auth]
-redirect_urls = [
-  "https://bring-earrings-philosophy-leaf.trycloudflare.com/auth/callback",
-  "https://bring-earrings-philosophy-leaf.trycloudflare.com/auth/shopify/callback",
-  "https://bring-earrings-philosophy-leaf.trycloudflare.com/api/auth/callback"
-]
-
-[webhooks]
-api_version = "2023-10"
-
-[pos]
-embedded = false
 
 [build]
 automatically_update_urls_on_dev = true
-dev_store_url = "quickstart-1ecd093d.myshopify.com"
+dev_store_url = "cartupsellgd.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customers,read_orders,read_product_listings,read_themes,write_files,write_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://suse-delhi-sandwich-knit.trycloudflare.com/auth/callback",
+  "https://suse-delhi-sandwich-knit.trycloudflare.com/auth/shopify/callback",
+  "https://suse-delhi-sandwich-knit.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = false

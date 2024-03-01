@@ -10,7 +10,7 @@ const initialState = {
   selectedType: 'block',
   selectedPosition: 'bottom',
   notesPlaceholder: '',
-  textFieldValue: '', // New state for text field
+  textFieldValue: 'Recommended for you!', // New state for text field
 };
 
 export const upsellContentSlice = createSlice({
